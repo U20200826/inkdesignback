@@ -7,7 +7,6 @@ import { redirect } from "next/navigation";
 import bcrypt from "bcryptjs";
 import {AuthSchema} from "@/lib/validations/auth";
 import {z} from "zod";
-import Interceptors from "undici-types/interceptors";
 
 type ActionResult = {
     success: boolean;
@@ -57,7 +56,7 @@ export async function loginAction(formData: z.infer<typeof AuthSchema>): Promise
         path: "/"
     })
 
-    return {success: true, message: "Product created successfully"};
+    return {success: true, message: "Login successful"};
 
 }
 
